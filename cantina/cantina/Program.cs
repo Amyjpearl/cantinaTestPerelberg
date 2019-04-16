@@ -12,28 +12,42 @@ namespace JSONParser
     {
         static void Main(string[] args)
         {
+            //access file
             WebClient client = new WebClient();
             var json = client.DownloadString("https://raw.githubusercontent.com/jdolan/quetoo/master/src/cgame/default/ui/settings/SystemViewController.json");
             MainView view = JsonConvert.DeserializeObject<MainView>(json);
+
             while (true)
             {
                 Console.WriteLine("Please write the class, className, or identifier you wish to find views by (case sensitive).");
+            
                 string input = Console.ReadLine().Trim();
+
+                //recurse thru views and add to list
                 List<string> matchingViews = new List<string>();
-                matchingViews = parseViews(view.subviews, input);
+                matchingViews = ParseViews(view.subviews, input);
+                
+                //console output
                 Console.WriteLine("Found " + matchingViews.Count + " matching subviews.");
                 if (matchingViews.Count > 0)
                     Console.WriteLine("Here are the corresponding JSON strings:\n");
+                else
+                    Console.WriteLine("Invalid input");
+                //use recursive function, write to console
                 foreach (var mv in matchingViews)
                 {
                     Console.WriteLine(mv);
                     Console.WriteLine("\n");
                 }
+                
+                    
             }
         }
 
-        public static List<string> parseViews(List<Subview> subviews, string selector)
+        public static List<string> ParseViews(List<Subview> subviews, string selector)
         {
+          
+            //tree traversal 
             List<string> newList = new List<string>();
             foreach (var sv in subviews)
             {
@@ -44,9 +58,9 @@ namespace JSONParser
                                 NullValueHandling = NullValueHandling.Ignore
                             }));
                 if (sv.subviews != null)
-                    newList.AddRange(parseViews(sv.subviews, selector));
+                    newList.AddRange(ParseViews(sv.subviews, selector));
                 if (sv.contentView != null)
-                    newList.AddRange(parseViews(sv.contentView.subviews, selector));
+                    newList.AddRange(ParseViews(sv.contentView.subviews, selector));
             }
             return newList;
         }
@@ -71,7 +85,7 @@ namespace JSONParser
     {
         public Text2 text { get; set; }
     }
-
+    //converted C# objects from serializer
     public class Control
     {
         public string @class { get; set; }
