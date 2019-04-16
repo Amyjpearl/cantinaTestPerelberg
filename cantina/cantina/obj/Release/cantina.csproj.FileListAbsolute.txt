@@ -1,0 +1,9 @@
+C:\Users\Amy Perelberg\Documents\GitHub\cantinaTestPerelberg\cantina\cantina\bin\Release\cantina.exe.config
+C:\Users\Amy Perelberg\Documents\GitHub\cantinaTestPerelberg\cantina\cantina\bin\Release\cantina.exe
+C:\Users\Amy Perelberg\Documents\GitHub\cantinaTestPerelberg\cantina\cantina\bin\Release\cantina.pdb
+C:\Users\Amy Perelberg\Documents\GitHub\cantinaTestPerelberg\cantina\cantina\bin\Release\Newtonsoft.Json.dll
+C:\Users\Amy Perelberg\Documents\GitHub\cantinaTestPerelberg\cantina\cantina\bin\Release\Newtonsoft.Json.pdb
+C:\Users\Amy Perelberg\Documents\GitHub\cantinaTestPerelberg\cantina\cantina\bin\Release\Newtonsoft.Json.xml
+C:\Users\Amy Perelberg\Documents\GitHub\cantinaTestPerelberg\cantina\cantina\obj\Release\cantina.csprojResolveAssemblyReference.cache
+C:\Users\Amy Perelberg\Documents\GitHub\cantinaTestPerelberg\cantina\cantina\obj\Release\cantina.exe
+C:\Users\Amy Perelberg\Documents\GitHub\cantinaTestPerelberg\cantina\cantina\obj\Release\cantina.pdb
